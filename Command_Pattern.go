@@ -29,7 +29,7 @@ func execByName(name string) string {
 		return command.Execute()
 	}
 }
-
+ 
 func main() {
 
 	fmt.Println(execByName("status"))
