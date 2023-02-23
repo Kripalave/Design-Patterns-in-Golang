@@ -1,4 +1,4 @@
-## Design-Patterns-in-Golang
+# Design-Patterns-in-Golang
 
 
 What is Design Patterns and why anyone should use them? 
@@ -7,13 +7,13 @@ Design patterns are a well-described solution to the most commonly encountered p
 
 The Design patterns can be classified into three main categories:
 
-##Creational Patterns
+## Creational Patterns
     Creational design patterns provide various object creation mechanisms, which increase flexibility and reuse of existing code.
 
-    ####Singleton
+    #### Singleton
         Singleton pattern comes under creational patterns category and introduces a single class which is responsible to create an object while making sure that only single object gets created
 
-    ####Factory or Factory method 
+    #### Factory or Factory method 
          In Factory pattern, we create object without exposing the creation logic to the client and refer to newly created object using a common interface.
 
         Pro's:
