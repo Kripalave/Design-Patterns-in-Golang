@@ -12,11 +12,11 @@ The Design patterns can be classified into three main categories:
 
 **Singleton**
   
-    ```Singleton pattern comes under creational patterns category and introduces a single class which is responsible to create an object while making sure that only single object gets created```
+   ```Singleton pattern comes under creational patterns category and introduces a single class which is responsible to create an object while making sure that only single object gets created```
 
 **Factory or Factory method**
  
-   ``` In Factory pattern, we create object without exposing the creation logic to the client and refer to newly created object using a common interface. ```
+  ```In Factory pattern, we create object without exposing the creation logic to the client and refer to newly created object using a common interface.```
 
        ``` Pro's:
             Allows you to hide implementation of an application seam (the core interfaces that make up your application)
@@ -32,7 +32,7 @@ The Design patterns can be classified into three main categories:
         
 **Prototype**
    
-   ```Prototype pattern refers to creating duplicate object while keeping performance in mind. This pattern involves implementing a prototype interface which tells to create a clone of the current object.```
+  ```Prototype pattern refers to creating duplicate object while keeping performance in mind. This pattern involves implementing a prototype interface which tells to create a clone of the current object.```
         
 **Builder**
   
