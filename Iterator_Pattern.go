@@ -31,7 +31,7 @@ func (u *userIterator) hasNext() bool {
 		return true
 	}
 	return false
-}
+} 
 
 func (u *userIterator) getNext() *user {
 	if u.hasNext() {
