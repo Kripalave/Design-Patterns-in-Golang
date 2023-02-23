@@ -85,6 +85,5 @@ Pro's:
 ```Decorator pattern allows a user to add new functionality to an existing object without altering its structure.```
 
 **Proxy**
-  
 ```In proxy pattern, a class represents functionality of another class. This type of design pattern comes under structural pattern.
         In proxy pattern, we create object having original object to interface its functionality to outer world.```
