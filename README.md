@@ -11,19 +11,18 @@ The Design patterns can be classified into three main categories:
    ```Creational design patterns provide various object creation mechanisms, which increase flexibility and reuse of existing code.```
 
 **Singleton**
-  
-   ```Singleton pattern comes under creational patterns category and introduces a single class which is responsible to create an object while making sure that only single object gets created```
+```Singleton pattern comes under creational patterns category and introduces a single class which is responsible to create an object while making sure that only single object gets created```
 
 **Factory or Factory method**
- 
-  ```In Factory pattern, we create object without exposing the creation logic to the client and refer to newly created object using a common interface.```
-``` Pro's:
+```In Factory pattern, we create object without exposing the creation logic to the client and refer to newly created object using a common interface.```
+
+Pro's:
             Allows you to hide implementation of an application seam (the core interfaces that make up your application)
             Allows you to easily test the seam of an application (that is to mock/stub) certain parts of your application so you can build and test the other parts
             Allows you to change the design of your application more readily, this is known as loose coupling
         Con's   
             Makes code more difficult to read as all of your code is behind an abstraction that may in turn hide abstractions.
-            Can be classed as an anti-pattern when it is incorrectly used, for example some people use it to wire up a whole application when using an IOC container, instead use Dependency Injection.```
+            Can be classed as an anti-pattern when it is incorrectly used, for example some people use it to wire up a whole application when using an IOC container, instead use Dependency Injection.
 
 **Abstract Factory**
    
