@@ -17,8 +17,7 @@ The Design patterns can be classified into three main categories:
 **Factory or Factory method**
  
   ```In Factory pattern, we create object without exposing the creation logic to the client and refer to newly created object using a common interface.```
-
-       ``` Pro's:
+``` Pro's:
             Allows you to hide implementation of an application seam (the core interfaces that make up your application)
             Allows you to easily test the seam of an application (that is to mock/stub) certain parts of your application so you can build and test the other parts
             Allows you to change the design of your application more readily, this is known as loose coupling
@@ -28,27 +27,27 @@ The Design patterns can be classified into three main categories:
 
 **Abstract Factory**
    
-     ```Abstract Factory pattern an interface is responsible for creating a factory of related objects without explicitly specifying their classes. Each generated factory can give the objects as per the Factory pattern.```
+```Abstract Factory pattern an interface is responsible for creating a factory of related objects without explicitly specifying their classes. Each generated factory can give the objects as per the Factory pattern.```
         
 **Prototype**
    
-  ```Prototype pattern refers to creating duplicate object while keeping performance in mind. This pattern involves implementing a prototype interface which tells to create a clone of the current object.```
+```Prototype pattern refers to creating duplicate object while keeping performance in mind. This pattern involves implementing a prototype interface which tells to create a clone of the current object.```
         
 **Builder**
   
-  ```Builder pattern builds a complex object using simple objects and using a step by step approach. This builder is independent of other objects.```
+```Builder pattern builds a complex object using simple objects and using a step by step approach. This builder is independent of other objects.```
 
 
 ## Behavioral Patterns
-   ```Behavioral design patterns are concerned with algorithms and the assignment of responsibilities between objects.```
+```Behavioral design patterns are concerned with algorithms and the assignment of responsibilities between objects.```
 
 **Chain of Responsibility**
    
-        ```Chain of Responsibility lets you pass requests along a chain of handlers. Upon receiving a request, each handler decides either to process the request or to pass it to the next handler in the chain.```
+ ```Chain of Responsibility lets you pass requests along a chain of handlers. Upon receiving a request, each handler decides either to process the request or to pass it to the next handler in the chain.```
 
 **Command**
   
-        ```Encapsulates a request as an object, thereby letting us parameterize other objects with different requests, queue or log requests, and support undoable operations.```
+  ```Encapsulates a request as an object, thereby letting us parameterize other objects with different requests, queue or log requests, and support undoable operations.```
 
 **Iterator**
        
@@ -72,7 +71,7 @@ The Design patterns can be classified into three main categories:
 
 
 ## Structural patterns(Functional Patterns)
-    These patterns explain how to assemble objects and classes into larger structures while keeping these structures flexible and efficient.
+    ```These patterns explain how to assemble objects and classes into larger structures while keeping these structures flexible and efficient.```
 
 **Adapter**
    
