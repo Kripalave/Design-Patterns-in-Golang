@@ -10,7 +10,7 @@ The Design patterns can be classified into three main categories:
 ## Creational Patterns
     Creational design patterns provide various object creation mechanisms, which increase flexibility and reuse of existing code.
 
-    ##### Singleton
+    ###### Singleton
         Singleton pattern comes under creational patterns category and introduces a single class which is responsible to create an object while making sure that only single object gets created
 
     ##### Factory or Factory method 
