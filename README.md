@@ -8,7 +8,7 @@ What is Design Patterns and why anyone should use them?
 The Design patterns can be classified into three main categories:
 
 ## Creational Patterns
-    ``` Creational design patterns provide various object creation mechanisms, which increase flexibility and reuse of existing code. ```
+   ```Creational design patterns provide various object creation mechanisms, which increase flexibility and reuse of existing code.```
 
 **Singleton**
   
