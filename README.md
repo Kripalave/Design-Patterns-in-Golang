@@ -3,7 +3,7 @@
 
 What is Design Patterns and why anyone should use them? 
 
-Design patterns are a well-described solution to the most commonly encountered problems which occur during software development.Design pattern represents the best practices evolved over a period of time by experienced software developers. They promote reusability which leads to a more robust and maintainable code.
+```Design patterns are a well-described solution to the most commonly encountered problems which occur during software development.Design pattern represents the best practices evolved over a period of time by experienced software developers. They promote reusability which leads to a more robust and maintainable code.```
 
 The Design patterns can be classified into three main categories:
 
