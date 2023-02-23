@@ -52,23 +52,23 @@ The Design patterns can be classified into three main categories:
 
 **Iterator**
        
-       ```Iterator pattern is used to get a way to access the elements of a collection object in sequential manner without any need to know its underlying representation.```
+ ```Iterator pattern is used to get a way to access the elements of a collection object in sequential manner without any need to know its underlying representation.```
     
 **Observer or Publish-Subscribe**
    
-        ```The observer pattern in which an object (a subject) keeps track of all of its dependents (observers) and notifies them of any state changes.```
+```The observer pattern in which an object (a subject) keeps track of all of its dependents (observers) and notifies them of any state changes.```
 
 **State**
    
-  ```The State pattern allows an object to change its behavior when its internal state changes. This pattern can be observed in a vending machine.```
+ ```The State pattern allows an object to change its behavior when its internal state changes. This pattern can be observed in a vending machine.```
 
 **Visitor**
   
-    ```Visitor pattern is used when we have to perform an operation on a group of similar kind of Objects. With the help of visitor pattern, we can move the operational logic from the objects to another class.```
+ ```Visitor pattern is used when we have to perform an operation on a group of similar kind of Objects. With the help of visitor pattern, we can move the operational logic from the objects to another class.```
 
 **Strategy**
    
-  ```Strategy pattern allows you to change the behavior of an object at run time without any change in the class of that object.```
+ ```Strategy pattern allows you to change the behavior of an object at run time without any change in the class of that object.```
 
 
 ## Structural patterns(Functional Patterns)
@@ -76,17 +76,17 @@ The Design patterns can be classified into three main categories:
 
 **Adapter**
    
-     ```Adapter pattern works as a bridge between two incompatible interfaces. This pattern involves a single class which is responsible to join functionalities of independent or incompatible interfaces (adaptees).```
+```Adapter pattern works as a bridge between two incompatible interfaces. This pattern involves a single class which is responsible to join functionalities of independent or incompatible interfaces (adaptees).```
 
 **Bridge**
   
-   ```Bridge pattern allows the Abstraction and the Implementation to be developed independently and the client code can access only the Abstraction part without being concerned about the Implementation part.```
+```Bridge pattern allows the Abstraction and the Implementation to be developed independently and the client code can access only the Abstraction part without being concerned about the Implementation part.```
 
 **Decorator**
   
-  ```Decorator pattern allows a user to add new functionality to an existing object without altering its structure. ```
+```Decorator pattern allows a user to add new functionality to an existing object without altering its structure.```
 
 **Proxy**
   
-   ```In proxy pattern, a class represents functionality of another class. This type of design pattern comes under structural pattern.
+```In proxy pattern, a class represents functionality of another class. This type of design pattern comes under structural pattern.
         In proxy pattern, we create object having original object to interface its functionality to outer world.```
