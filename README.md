@@ -36,7 +36,7 @@ The Design patterns can be classified into three main categories:
         Prototype pattern refers to creating duplicate object while keeping performance in mind. This pattern involves implementing a prototype interface which tells to create a clone of the current object.
         
    **Builder
-   
+  
         Builder pattern builds a complex object using simple objects and using a step by step approach. This builder is independent of other objects.
 
 
