@@ -52,10 +52,13 @@ Pro's:
 **Chain of Responsibility/Middleware Pattern**
    
  ```Chain of Responsibility lets you pass requests along a chain of handlers. Upon receiving a request, each handler decides either to process the request or to pass it to the next handler in the chain.```
+ - Allows passing request along the chain of potential handlers until one of them handles request
 
 **Command**
   
   ```Encapsulates a request as an object, thereby letting us parameterize other objects with different requests, queue or log requests, and support undoable operations.```
+
+- Is used when we want to create and execute “commands”. Different commands have their own implementation
 
 **Iterator**
        
