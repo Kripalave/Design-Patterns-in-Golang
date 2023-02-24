@@ -25,10 +25,17 @@ Pro's:
         Con's   
             Makes code more difficult to read as all of your code is behind an abstraction that may in turn hide abstractions.
             Can be classed as an anti-pattern when it is incorrectly used, for example some people use it to wire up a whole application when using an IOC container, instead use Dependency Injection.
+           
+- It is used for creating objects to encapsulate the instantiation logic.
+- Client doesn’t know actual instantiation logic of entity.
+          
 
 **Abstract Factory**
    
 ```Abstract Factory pattern an interface is responsible for creating a factory of related objects without explicitly specifying their classes. Each generated factory can give the objects as per the Factory pattern.```
+
+-It possible to interchange the concrete classes without changing the client code even at runtime.
+
         
 **Prototype**
    
