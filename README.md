@@ -85,6 +85,7 @@ Pro's:
    
 ```Adapter pattern works as a bridge between two incompatible interfaces. This pattern involves a single class which is responsible to join functionalities of independent or incompatible interfaces (adaptees).```
 - Is that you don't need to change the existing class or interface.
+
 **Bridge**
   
 ```Bridge pattern allows the Abstraction and the Implementation to be developed independently and the client code can access only the Abstraction part without being concerned about the Implementation part.```
