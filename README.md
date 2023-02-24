@@ -40,6 +40,8 @@ Pro's:
 **Prototype**
    
 ```Prototype pattern refers to creating duplicate object while keeping performance in mind. This pattern involves implementing a prototype interface which tells to create a clone of the current object.```
+
+- Is used when the Object creation is a costly affair and requires a lot of time and resources and you have a similar object already existing.
         
 **Builder**
   
