@@ -5,6 +5,7 @@ What is Design Patterns and why anyone should use them?
 
 ```Design patterns are a well-described solution to the most commonly encountered problems which occur during software development.Design pattern represents the best practices evolved over a period of time by experienced software developers. They promote reusability which leads to a more robust and maintainable code.```
 
+
 The Design patterns can be classified into three main categories:
 
 ## Creational Patterns
@@ -12,6 +13,7 @@ The Design patterns can be classified into three main categories:
 
 **Singleton**
 ```Singleton pattern comes under creational patterns category and introduces a single class which is responsible to create an object while making sure that only single object gets created```
+-  It is used for logging, drivers objects, caching, and thread pool. 
 
 **Factory or Factory method**
 ```In Factory pattern, we create object without exposing the creation logic to the client and refer to newly created object using a common interface.```
