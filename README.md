@@ -84,7 +84,7 @@ Pro's:
 **Adapter**
    
 ```Adapter pattern works as a bridge between two incompatible interfaces. This pattern involves a single class which is responsible to join functionalities of independent or incompatible interfaces (adaptees).```
-
+- Is that you don't need to change the existing class or interface.
 **Bridge**
   
 ```Bridge pattern allows the Abstraction and the Implementation to be developed independently and the client code can access only the Abstraction part without being concerned about the Implementation part.```
@@ -92,7 +92,8 @@ Pro's:
 **Decorator**
   
 ```Decorator pattern allows a user to add new functionality to an existing object without altering its structure.```
-
+- Dynamically changes the functionality of an object at run-time without impacting the existing functionality of the objects.
 **Proxy**
 ```In proxy pattern, a class represents functionality of another class. This type of design pattern comes under structural pattern.```
 ```In proxy pattern, we create object having original object to interface its functionality to outer world.```
+- Create a wrapper to cover the main object's complexity from the client
