@@ -2,44 +2,51 @@ package main
 
 import "fmt"
 
-const (
-	french  = 1
-	english = 2
-)
-
-type translator interface {
-	getMessage() string
+// Product: Payment interface
+type Payment interface {
+	Pay(amount float64) string
 }
 
-func getTranslator(m int) (translator, error) {
-	switch m {
-	case french:
-		return new(frenchMessage), nil
-	case english:
-		return new(englishMessage), nil
-	default:
-		return nil, fmt.Errorf("Unknown building")
-	}
+// ConcreteProductA: Credit Card Payment
+type CreditCardPayment struct{}
+
+func (c *CreditCardPayment) Pay(amount float64) string {
+	return fmt.Sprintf("Paid $%.2f using Credit Card", amount)
 }
 
-type frenchMessage string
+// ConcreteProductB: PayPal Payment
+type PayPalPayment struct{}
 
-func (c *frenchMessage) getMessage() string {
-	return "Bonjour le monde"
+func (p *PayPalPayment) Pay(amount float64) string {
+	return fmt.Sprintf("Paid $%.2f using PayPal", amount)
 }
 
-type englishMessage string
+// Creator: PaymentFactory interface
+type PaymentFactory interface {
+	CreatePayment() Payment
+}
 
-func (d *englishMessage) getMessage() string {
-	return "Hello World"
+// ConcreteCreatorA: CreditCardPaymentFactory
+type CreditCardPaymentFactory struct{}
+
+func (c *CreditCardPaymentFactory) CreatePayment() Payment {
+	return &CreditCardPayment{}
+}
+
+// ConcreteCreatorB: PayPalPaymentFactory
+type PayPalPaymentFactory struct{}
+
+func (p *PayPalPaymentFactory) CreatePayment() Payment {
+	return &PayPalPayment{}
 }
 
 func main() {
-	obj1, _ := getTranslator(1)
-	fmt.Printf("%T\n", obj1)
-	fmt.Println(obj1.getMessage())
+	// Client code
+	creditCardFactory := &CreditCardPaymentFactory{}
+	creditCardPayment := creditCardFactory.CreatePayment()
+	fmt.Println(creditCardPayment.Pay(100.0))
 
-	obj2, _ := getTranslator(2)
-	fmt.Printf("%T\n", obj2)
-	fmt.Println(obj2.getMessage())
+	payPalFactory := &PayPalPaymentFactory{}
+	payPalPayment := payPalFactory.CreatePayment()
+	fmt.Println(payPalPayment.Pay(50.0))
 }
