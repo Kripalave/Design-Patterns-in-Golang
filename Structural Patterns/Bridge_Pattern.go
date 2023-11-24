@@ -2,75 +2,80 @@ package main
 
 import "fmt"
 
-type Mobile interface {
-	setCamera(Camera)
-	click()
+// Database abstraction interface
+type Database interface {
+	Connect() error
+	Query(query string) (string, error)
+	Close() error
 }
 
-type Samsung struct {
-	Camera Camera
+// SQL implementation
+type SQLDatabase struct {
+	// Additional SQL-specific fields if needed
 }
 
-func (s *Samsung) setCamera(c Camera) {
-	s.Camera = c
+func (s *SQLDatabase) Connect() error {
+	fmt.Println("Connecting to SQL database")
+	// Actual SQL connection logic
+	return nil
 }
 
-func (s *Samsung) click() {
-	fmt.Println("Clicking via samsung phone")
-	s.Camera.clickPic()
+func (s *SQLDatabase) Query(query string) (string, error) {
+	fmt.Println("Executing SQL query:", query)
+	// Actual SQL query execution logic
+	return "SQL result", nil
 }
 
-type Motorola struct {
-	Camera Camera
+func (s *SQLDatabase) Close() error {
+	fmt.Println("Closing SQL database connection")
+	// Actual SQL connection closing logic
+	return nil
 }
 
-func (m *Motorola) setCamera(c Camera) {
-	m.Camera = c
+// NoSQL implementation
+type NoSQLDatabase struct {
+	// Additional NoSQL-specific fields if needed
 }
 
-func (m *Motorola) click() {
-	fmt.Println("CLicking via motorola phone")
-	m.Camera.clickPic()
+func (n *NoSQLDatabase) Connect() error {
+	fmt.Println("Connecting to NoSQL database")
+	// Actual NoSQL connection logic
+	return nil
 }
 
-type Camera interface {
-	clickPic()
+func (n *NoSQLDatabase) Query(query string) (string, error) {
+	fmt.Println("Executing NoSQL query:", query)
+	// Actual NoSQL query execution logic
+	return "NoSQL result", nil
 }
 
-type FrontCamera struct {
+func (n *NoSQLDatabase) Close() error {
+	fmt.Println("Closing NoSQL database connection")
+	// Actual NoSQL connection closing logic
+	return nil
 }
 
-func (f *FrontCamera) clickPic() {
-	fmt.Println("Picture clicked via front camera")
-}
-
-type BackCamera struct {
-}
-
-func (f *BackCamera) clickPic() {
-	fmt.Println("Picture clicked via back camera")
-}
 func main() {
-	s := new(Samsung)
-	m := new(Motorola)
-	fc := new(FrontCamera)
-	b := new(BackCamera)
+	// Client code using the Database abstraction
 
-	//samsung with front camera
-	s.setCamera(fc)
-	s.click()
-	fmt.Println()
-	//samsung with back camera
-	s.setCamera(b)
-	s.click()
-	fmt.Println()
-	//motorola with fron camera
-	m.setCamera(fc)
-	m.click()
-	fmt.Println()
-	//motorola with back camera
-	m.setCamera(b)
-	m.click()
+	// Create instances of concrete implementations
+	sqlDB := &SQLDatabase{}
+	noSQLDB := &NoSQLDatabase{}
 
+	// Connect, query, and close for SQL
+	useDatabase(sqlDB)
 
+	// Connect, query, and close for NoSQL
+	useDatabase(noSQLDB)
+}
+
+func useDatabase(db Database) {
+	db.Connect()
+	result, err := db.Query("SELECT * FROM users")
+	if err != nil {
+		fmt.Println("Error querying database:", err)
+		return
+	}
+	fmt.Println("Query result:", result)
+	db.Close()
 }
