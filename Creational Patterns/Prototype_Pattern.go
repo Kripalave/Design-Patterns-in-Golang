@@ -1,21 +1,41 @@
 package main
+
 import "fmt"
-type Example struct {
-	Content string
+
+// GraphicObject represents a graphic object
+type GraphicObject struct {
+	Name  string
+	Color string
+	// Additional properties...
 }
 
-func (e *Example) Clone() *Example {
-	res := *e
-	return &res
+// Cloneable defines the prototype interface
+type Cloneable interface {
+	Clone() Cloneable
+}
+
+// NewGraphicObject creates a new instance of GraphicObject
+func NewGraphicObject(name, color string) *GraphicObject {
+	return &GraphicObject{Name: name, Color: color}
+}
+
+// Clone creates a shallow copy of the GraphicObject
+func (g *GraphicObject) Clone() Cloneable {
+	// Perform a shallow copy to create a new instance with the same values
+	return &GraphicObject{Name: g.Name, Color: g.Color}
 }
 
 func main() {
-	r1 := new(Example)
-	r1.Content = "this is example 1"
-	r2 := r1.Clone()
-	r2.Content = "this is example 2"
+	// Creating an instance of GraphicObject
+	originalGraphic := NewGraphicObject("Circle", "Red")
 
-	fmt.Println(r1)
-	fmt.Println(r2)
+	// Cloning the original graphic
+	clonedGraphic := originalGraphic.Clone().(*GraphicObject)
 
+	// Modifying the cloned graphic
+	clonedGraphic.Color = "Blue"
+
+	// Displaying the results
+	fmt.Println("Original Graphic:", originalGraphic)
+	fmt.Println("Cloned Graphic:", clonedGraphic)
 }
