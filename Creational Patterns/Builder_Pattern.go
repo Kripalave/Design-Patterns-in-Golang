@@ -1,85 +1,45 @@
 package main
+
 import "fmt"
 
-type MyAudi struct {
-	name string
-	wheelSize string
-	engineCapacityCC int
-	powerBHP int
-	torque int
-	fuelType string
-	cost int
+// ReportBuilder is the builder interface for constructing reports.
+type ReportBuilder interface {
+	SetTitle(title string) ReportBuilder
+	SetContent(content string) ReportBuilder
+	Build() string
 }
 
-func (m MyAudi) showAudi() {
-	fmt.Println("Audi Name : " , m.name)
-	fmt.Println("Audi wheel : " , m.wheelSize)
-	fmt.Println("Audi Engine : " , m.engineCapacityCC)
-	fmt.Println("Audi power bhp : " , m.powerBHP)
-	fmt.Println("Audi Torque : " , m.torque)
-	fmt.Println("Audi fuel : " , m.fuelType)
-	fmt.Println("Audi Cost INR: " , m.cost)
-
+// ConcreteReportBuilder is a concrete builder implementation for reports.
+type ConcreteReportBuilder struct {
+	title   string
+	content string
 }
 
-//this is abstract builder
-type AudiBuilder interface {
-	createAudi() MyAudi
+// NewReportBuilder creates a new instance of ConcreteReportBuilder.
+func NewReportBuilder() ReportBuilder {
+	return &ConcreteReportBuilder{}
 }
 
-//now concrete builders
-type AudiQ3Builder struct {
+func (b *ConcreteReportBuilder) SetTitle(title string) ReportBuilder {
+	b.title = title
+	return b
 }
 
-func (a AudiQ3Builder) createAudi() MyAudi {
-	audi := MyAudi{}
-	audi.name = "AydiQ3"
-	audi.cost = 1000000000
-	audi.engineCapacityCC = 3000
-	audi.fuelType = "Diesel"
-	audi.powerBHP = 300
-	audi.torque = 480
-	audi.wheelSize = "R17/75/250"
-	return audi
+func (b *ConcreteReportBuilder) SetContent(content string) ReportBuilder {
+	b.content = content
+	return b
 }
 
-
-//now concrete builders
-type AudiQ4Builder struct {
-}
-
-func (a AudiQ4Builder) createAudi() MyAudi {
-	audi := MyAudi{}
-	audi.name = "AydiQ4"
-	audi.cost = 2000000000
-	audi.engineCapacityCC = 4000
-	audi.fuelType = "Patrol"
-	audi.powerBHP = 400
-	audi.torque = 580
-	audi.wheelSize = "R19/85/250"
-	return audi
-}
-
-
-// you may implement other builder urself :P
-
-
-//this is director
-
-type ProductionLine struct {
-	builder AudiBuilder
-}
-
-func (a ProductionLine)CreateMyAudi() MyAudi {
-	return a.builder.createAudi()
+func (b *ConcreteReportBuilder) Build() string {
+	return fmt.Sprintf("Title: %s\nContent: %s", b.title, b.content)
 }
 
 func main() {
-	p := ProductionLine{AudiQ3Builder{}}
-	res := p.CreateMyAudi()
-	res.showAudi()
-	p = ProductionLine{AudiQ4Builder{}}
-	res = p.CreateMyAudi()
-	res.showAudi()
+	// Example usage of the report builder
+	builder := NewReportBuilder().
+		SetTitle("Monthly Report").
+		SetContent("This is the content of the report.")
 
+	report := builder.Build()
+	fmt.Println(report)
 }
