@@ -1,56 +1,34 @@
-package main
+package singleton
 
-import "fmt"
+import (
+ "database/sql"
+ "sync"
 
-type connection struct {
-	host     string
-	port     string
-	username string
-	password string
+ _ "github.com/go-sql-driver/mysql"
+)
+
+type Database struct {
+ conn *sql.DB
 }
 
-type DbConnection interface {
-	printInfo()
-	executeQuery(query string)
+var instance *Database
+var once sync.Once
+
+func GetInstance() *Database {
+ once.Do(func() {
+  db, err := sql.Open("mysql", "user:password@tcp(127.0.0.1:3306)/mydatabase")
+  if err != nil {
+   panic(err.Error())
+  }
+  instance = &Database{conn: db}
+ })
+ return instance
 }
 
-var dbConnectionInstance *connection
-
-func GetDbInstance(host, port, username, password string) *connection {
-	if dbConnectionInstance == nil {
-		fmt.Println("Creating a new database instance")
-
-		dbConnectionInstance = &connection{host, port, username, password}
-
-		return dbConnectionInstance
-	}
-
-	fmt.Println("Returing existing database instance")
-	return dbConnectionInstance
+func (d *Database) Query(query string, args ...interface{}) (*sql.Rows, error) {
+ return d.conn.Query(query, args...)
 }
 
-func (conn *connection) printInfo() {
-	fmt.Println("host:", conn.host)
-	fmt.Println("post:", conn.port)
-	fmt.Println("username:", conn.username)
-	fmt.Println("password:", conn.password)
-}
-
-func (conn *connection) executeQuery(query string) {
-	fmt.Println("Executing: ", query)
-}
-
-func main() {
-	dbInstance1 := GetDbInstance("localhost", "3306", "root", "password")
-	dbInstance1.printInfo()
-
-	dbInstance2 := GetDbInstance("localhost2", "2222", "root2", "password1")
-	dbInstance2.printInfo()
-
-	if dbInstance1 == dbInstance2 {
-		fmt.Println("dbInstance 1 and 2 are same instance")
-	} else {
-		fmt.Println("dbInstance 1 and 2 are different")
-	}
-
+func (d *Database) Exec(query string, args ...interface{}) (sql.Result, error) {
+ return d.conn.Exec(query, args...)
 }
